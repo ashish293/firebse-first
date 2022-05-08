@@ -27,6 +27,7 @@
 		</style>
 	</head>
 	<body>
+		<!-- Navbar -->
 		<nav class="navbar navbar-expand-lg navbar-light bg-warning">
 			<div class="container-fluid">
 				<a class="navbar-brand fs-2" href="#">Job Portal</a>
@@ -61,12 +62,19 @@
 								Signup
 							</button>
 						</li>
+						<li class="nav-item">
+							<button class="nav-link bg-transparent border-0" onclick="logout(event)">
+								Logout
+							</button>
+						</li>
 					</ul>
 				</div>
 			</div>
 		</nav>
 		<!-- Button trigger modal -->
-		<button type="button" class="btn btn-primary" onclick="tos()">Launch demo modal</button>
+		<button type="button" class="btn btn-primary" onclick="loginWthGoogle()">
+			Launch demo modal
+		</button>
 
 		<!-- Login Modal -->
 		<div
@@ -78,7 +86,7 @@
 		>
 			<div class="modal-dialog">
 				<div class="modal-content">
-					<form>
+					<form onsubmit="login(event)">
 						<div class="modal-header">
 							<h5 class="modal-title" id="login">Login</h5>
 							<button
@@ -86,6 +94,7 @@
 								class="btn-close"
 								data-bs-dismiss="modal"
 								aria-label="Close"
+								id="closeLoginModal"
 							></button>
 						</div>
 						<div class="modal-body">
@@ -129,6 +138,7 @@
 							<button
 								type="button"
 								class="btn-close"
+								id="closeSignupModal"
 								data-bs-dismiss="modal"
 								aria-label="Close"
 							></button>
@@ -161,8 +171,8 @@
 				</div>
 			</div>
 		</div>
-		<!-- Toast -->
 
+		<!-- Toast -->
 		<div class="toast-container position-absolute top-0 end-0 m-5 w-50 d-flex justify-content-end">
 			<div
 				class="toast p-1 align-items-center text-white border-0"
